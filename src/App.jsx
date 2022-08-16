@@ -1,9 +1,12 @@
+import Home from './components/pages/Home/Home'
 import MainLayout from './components/templates/MainLayout/MainLayout'
 
 function App() {
   return (
     <div className="app">
-      <MainLayout>Hello World2</MainLayout>
+      <MainLayout>
+        <Home />
+      </MainLayout>
     </div>
   )
 }

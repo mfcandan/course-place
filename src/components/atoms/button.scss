@@ -1,0 +1,28 @@
+@import '../../style/palette.scss';
+
+.button {
+  padding: 8px;
+  margin: 0;
+  border-radius: 4px;
+  color: $black;
+  border: none;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+}
+
+.primary {
+  background-color: $primary_color;
+
+  &:hover {
+    background-color: $darkPurple;
+  }
+}
+
+.secondary {
+  background-color: $secondary_color;
+
+  &:hover {
+    background-color: $darkPeach;
+  }
+}
