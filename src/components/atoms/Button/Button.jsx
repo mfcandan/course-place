@@ -1,12 +1,9 @@
-import { useState } from 'react'
 import './button.scss'
 
-const Button = ({ children, variant }) => {
-  const [isSelected, setIsSelected] = useState()
-
+const Button = ({ children, variant, isSelected, onClick }) => {
   return (
     <button
-      onClick={() => setIsSelected(!isSelected)}
+      onClick={() => onClick(children)}
       className={`button ${variant || 'primary'} ${isSelected && 'selected'}`}
     >
       {children}
