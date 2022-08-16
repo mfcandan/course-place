@@ -1,7 +1,7 @@
 import './mainLayout.scss'
 
 const MainLayout = ({ children }) => {
-  return <div className="layout">{children}</div>
+  return <main className="layout">{children}</main>
 }
 
 export default MainLayout

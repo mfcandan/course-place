@@ -9,6 +9,7 @@
   width: auto;
   overflow: visible;
   background: transparent;
+  cursor: pointer;
 }
 
 .primary {
@@ -24,5 +25,14 @@
 
   &:hover {
     background-color: $darkPeach;
+  }
+}
+
+.selected {
+  background-color: $green;
+  color: white;
+
+  &:hover {
+    background-color: $darkGreen;
   }
 }
