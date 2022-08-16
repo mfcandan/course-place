@@ -1,3 +1,4 @@
+import CourseSearch from '../../molecules/CourseSearch/CourseSearch'
 import Navbar from '../../organisms/Navbar/Navbar'
 import './home.scss'
 
@@ -5,7 +6,10 @@ const Home = () => {
   return (
     <div className="home">
       <Navbar />
-      <div className="container">Home</div>
+      <CourseSearch />
+      <div className="container">
+        
+      </div>
     </div>
   )
 }

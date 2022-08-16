@@ -1,0 +1,25 @@
+@import '../../../style/palette.scss';
+
+.searchInput {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  background-color: white;
+  width: 40vw;
+
+  input {
+    padding: 1rem;
+    width: 100%;
+  }
+  .searchBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: $red;
+    padding: 1em;
+    cursor: pointer;
+  }
+}
