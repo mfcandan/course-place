@@ -1,12 +1,11 @@
-import Button from '../../atoms/Button'
+import Navbar from '../../organisms/Navbar/Navbar'
 import './home.scss'
 
 const Home = () => {
   return (
-    <div className='home'>
-      Home
-      <Button>Fatih</Button>
-      <Button variant="secondary">Fatih 2</Button>
+    <div className="home">
+      <Navbar />
+      <div className="container">Home</div>
     </div>
   )
 }
