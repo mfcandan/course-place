@@ -11,7 +11,7 @@ const TabManager = () => {
   const [selected, setSelected] = useState('All Courses')
 
   return (
-    <div className="tabManager">
+    <article className="tabManager">
       {tags.map((tab) => (
         <Button
           onClick={setSelected}
@@ -22,7 +22,7 @@ const TabManager = () => {
           {tab.name}
         </Button>
       ))}
-    </div>
+    </article>
   )
 }
 

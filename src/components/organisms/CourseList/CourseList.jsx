@@ -3,14 +3,14 @@ import './courseList.scss'
 
 const CourseList = () => {
   return (
-    <div className="courseList">
+    <article className="courseList">
       <Card />
       <Card />
       <Card />
       <Card />
       <Card />
       <Card />
-    </div>
+    </article>
   )
 }
 
