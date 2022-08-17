@@ -1,0 +1,14 @@
+@import '../../../style/palette.scss';
+
+.totalPoints {
+  display: flex;
+  align-items: center;
+
+  .price {
+    display: flex;
+    color: $orange;
+    margin: 0 4px;
+    align-items: center;
+    cursor: pointer;
+  }
+}

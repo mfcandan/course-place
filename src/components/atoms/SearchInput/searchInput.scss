@@ -21,5 +21,9 @@
     background-color: $red;
     padding: 1em;
     cursor: pointer;
+
+    &:hover {
+      background-color: $darkRed;
+    }
   }
 }

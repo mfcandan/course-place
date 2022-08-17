@@ -1,0 +1,56 @@
+@import '../../../style/palette.scss';
+
+.card {
+  width: 100%;
+  height: auto;
+  min-height: 360px;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25), 0 0 50px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+
+  &:hover {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5), 0 0 50px rgba(0, 0, 0, 0.2);
+  }
+
+  .top {
+    width: 100%;
+
+    img {
+      max-width: 100%;
+      min-height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+  }
+
+  hr {
+    margin: 1em 0;
+    border: 0.5px solid $ligthGray;
+  }
+
+  .bottom {
+    width: 100%;
+
+    .cardFooter{
+      margin-top: 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .price {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: $orange;
+        font-weight: bold;
+        border: 1px solid $orange;
+        border-radius: 6px;
+        padding: 6px;
+      }
+    }
+
+    button{
+      margin-top: 1em;
+    }
+  }
+}

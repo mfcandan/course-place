@@ -1,10 +1,22 @@
 import './button.scss'
 
-const Button = ({ children, variant, isSelected, onClick }) => {
+const Button = ({
+  children,
+  variant,
+  isSelected,
+  onClick,
+  isBold,
+  width,
+  height,
+}) => {
   return (
     <button
       onClick={() => onClick(children)}
-      className={`button ${variant || 'primary'} ${isSelected && 'selected'}`}
+      width={width}
+      style={{ width: width || 'auto', height: height || 'auto' }}
+      className={`button ${variant || 'primary'} ${isSelected && 'success'} ${
+        isBold && 'bold'
+      }`}
     >
       {children}
     </button>
