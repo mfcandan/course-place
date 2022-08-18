@@ -8,11 +8,9 @@ import './courseDetailModal.scss'
 
 const CourseDetailModal = ({ title }) => {
   const { courseDetailModal } = useStore()
-  const author =
-    courseDetailModal?.course?.authorId &&
-    authors.find(
-      (courseAuthor) => courseAuthor?.id === courseDetailModal?.course?.authorId
-    )
+  const author = authors.find(
+    (courseAuthor) => courseAuthor?.id === courseDetailModal?.course?.authorId
+  )
 
   return (
     courseDetailModal.isOpen && (
@@ -22,11 +20,7 @@ const CourseDetailModal = ({ title }) => {
             <h2>{courseDetailModal.course.title}</h2>
             <img
               className="courseImg"
-              src={
-                courseDetailModal.course.imgUrl
-                  ? courseDetailModal.course.imgUrl
-                  : 'https://www.sipexe.com/assets/courses/react.jpg'
-              }
+              src={courseDetailModal.course.imgUrl}
               alt="react"
             />
             <div className="info">
