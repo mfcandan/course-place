@@ -1,11 +1,13 @@
-import { allCoursesData } from '../../../mock/mockData'
+import { useStore } from '../../../store/store'
 import Card from '../../molecules/Card/Card'
 import './allCourses.scss'
 
 const AllCourses = () => {
+  const { courses } = useStore()
+
   return (
     <>
-      {allCoursesData.map((course) => (
+      {courses.map((course) => (
         <Card key={course.id} course={course} />
       ))}
     </>

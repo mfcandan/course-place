@@ -62,6 +62,15 @@
   }
 }
 
+.disable {
+  background-color: $gray;
+  color: white;
+
+  &:hover {
+    background-color: $darkGray;
+  }
+}
+
 .bold {
   font-weight: bold;
 }

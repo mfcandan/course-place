@@ -7,10 +7,16 @@ import UserProfile from '../../molecules/UserProfile/UserProfile'
 import './courseDetailModal.scss'
 
 const CourseDetailModal = ({ title }) => {
-  const { courseDetailModal } = useStore()
+  const { courseDetailModal, enrollCourse, user } = useStore()
   const author = authors.find(
     (courseAuthor) => courseAuthor?.id === courseDetailModal?.course?.authorId
   )
+
+  const handleEnrollCourse = () => {
+    if (user.hubPoints >= courseDetailModal.course.price) {
+      enrollCourse(courseDetailModal.course.price, courseDetailModal.course.id)
+    }
+  }
 
   return (
     courseDetailModal.isOpen && (
@@ -29,7 +35,16 @@ const CourseDetailModal = ({ title }) => {
               )}
               <div>
                 {!courseDetailModal.course.isEnabled ? (
-                  <Button variant="orange" width="15rem" height="4rem">
+                  <Button
+                    variant={
+                      parseInt(courseDetailModal.course.price) <= user.hubPoints
+                        ? 'orange'
+                        : 'disable'
+                    }
+                    width="15rem"
+                    height="4rem"
+                    onClick={() => handleEnrollCourse()}
+                  >
                     Enroll Now!
                     {courseDetailModal.course.price > 0 && (
                       <div className="price">
@@ -42,6 +57,9 @@ const CourseDetailModal = ({ title }) => {
                 )}
               </div>
             </div>
+            {user.hubPoints < parseInt(courseDetailModal.course.price) &&!courseDetailModal.course.isEnabled && (
+              <h3>Not Enough Hub Points :(</h3>
+            )}
           </div>
           <div className="bottom">
             <div className="content">

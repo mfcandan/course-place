@@ -1,11 +1,18 @@
-import { allCoursesData } from '../../../mock/mockData'
+import { useEffect } from 'react'
+import { useStore } from '../../../store/store'
 import Card from '../../molecules/Card/Card'
 import './myCourses.scss'
 
 const MyCourses = () => {
+  const { myCourses, fetchMyCourses } = useStore()
+
+  useEffect(() => {
+    fetchMyCourses()
+  }, [])
+
   return (
     <>
-      {allCoursesData.map(
+      {myCourses.map(
         (course) => course.isEnabled && <Card key={course.id} course={course} />
       )}
     </>
