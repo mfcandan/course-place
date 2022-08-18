@@ -1,8 +1,11 @@
 import { useEffect } from 'react'
 import Button from '../../atoms/Button/Button'
 import './modal.scss'
+import { useStore } from '../../../store/store'
 
-const Modal = ({ children, isModalOpen, setModalIsOpen, title }) => {
+const Modal = ({ children, title }) => {
+  const { toggleModal } = useStore()
+
   useEffect(() => {
     function onKeyDown(event) {
       if (event.key === 'Escape') {
@@ -18,10 +21,6 @@ const Modal = ({ children, isModalOpen, setModalIsOpen, title }) => {
       document.removeEventListener('keydown', onKeyDown)
     }
   })
-
-  const toggleModal = () => {
-    setModalIsOpen(!isModalOpen)
-  }
 
   return (
     <div className="modalBackdrop">

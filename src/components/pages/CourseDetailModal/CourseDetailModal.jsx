@@ -1,36 +1,41 @@
 import SavingsIcon from '@mui/icons-material/Savings'
 import Button from '../../atoms/Button/Button'
 import Modal from '../../molecules/Modal/Modal'
+import { useStore } from '../../../store/store'
 import './courseDetailModal.scss'
 
-const CourseDetailModal = ({ isModalOpen, setModalIsOpen, title, course }) => {
+const CourseDetailModal = ({ title }) => {
+  const { courseDetailModal } = useStore()
+
   return (
-    isModalOpen && (
-      <Modal
-        isModalOpen={isModalOpen}
-        setModalIsOpen={setModalIsOpen}
-        title={title || 'Course Details:'}
-      >
+    courseDetailModal.isOpen && (
+      <Modal title={title || ''}>
         <div className="courseDetailModal">
           <div className="top">
-            <h2>Everything You Need to Know About React.js</h2>
+            <h2>{courseDetailModal.course.title}</h2>
             <img
-              src="https://www.sipexe.com/assets/courses/react.jpg"
+              src={
+                courseDetailModal.course.imgUrl
+                  ? courseDetailModal.course.imgUrl
+                  : 'https://www.sipexe.com/assets/courses/react.jpg'
+              }
               alt="react"
             />
             <Button variant="orange" width="15rem" height="4rem">
               Enroll Now!
-              <div className="price">
-                150 <SavingsIcon />
-              </div>
+              {courseDetailModal.course.price > 0 && (
+                <div className="price">
+                  {courseDetailModal.course.price} <SavingsIcon />
+                </div>
+              )}
             </Button>
           </div>
           <div className="bottom">
             <div className="content">
-              {course?.content ? (
+              {courseDetailModal.course?.content ? (
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: course?.content,
+                    __html: courseDetailModal.course?.content,
                   }}
                 />
               ) : (
