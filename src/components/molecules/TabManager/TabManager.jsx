@@ -1,25 +1,22 @@
-import { useState } from 'react'
+import { courseTabs } from '../../../constants/courseTabs'
+import { useStore } from '../../../store/store'
 import Button from '../../atoms/Button/Button'
 import './tabManager.scss'
 
-const tags = [
-  { name: 'All Courses' },
-  { name: 'My Courses' },
-]
-
 const TabManager = () => {
-  const [selected, setSelected] = useState('All Courses')
+  const { selectedTab, setSelectedTab } = useStore()
+  const tabs = Object.values(courseTabs)
 
   return (
     <article className="tabManager">
-      {tags.map((tab) => (
+      {tabs.map((tab) => (
         <Button
-          onClick={setSelected}
-          isSelected={selected === tab.name}
-          key={tab.name}
+          onClick={() => setSelectedTab(tab)}
+          isSelected={selectedTab === tab}
+          key={tab}
           isBold={true}
         >
-          {tab.name}
+          {tab}
         </Button>
       ))}
     </article>
