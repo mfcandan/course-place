@@ -1,0 +1,3 @@
+export const coursesUrl = 'https://40060bec-d8e7-4ad2-96c2-63b9fdb4ef24.mock.pstmn.io/wp-json/ldlms/v2/my_courses?bx_sender_conversion_id=8971467&utm_source=newsletter&utm_medium=mail&utm_campaign=global_ai_hub_react_developer_task_son_teslim_tarihi_19_agustos_2022_cuma'
+
+export const myCoursesUrl = 'https://40060bec-d8e7-4ad2-96c2-63b9fdb4ef24.mock.pstmn.io/wp-json/ldlms/v2/sfwd-courses?bx_sender_conversion_id=8971467&utm_source=newsletter&utm_medium=mail&utm_campaign=global_ai_hub_react_developer_task_son_teslim_tarihi_19_agustos_2022_cuma'

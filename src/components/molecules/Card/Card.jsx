@@ -3,6 +3,7 @@ import Button from '../../atoms/Button/Button'
 import SavingsIcon from '@mui/icons-material/Savings'
 import { useStore } from '../../../store/store'
 import { authors } from '../../../mock/mockData'
+import dummyImage from '../../../assets/dummyImage.jpeg'
 import './card.scss'
 
 const Card = ({ course }) => {
@@ -14,7 +15,7 @@ const Card = ({ course }) => {
   return (
     <div className="card">
       <div className="top">
-        <img src={course.imgUrl} alt={course.title + ' image'} />
+        <img src={course.imgUrl || dummyImage} alt={course.title + ' image'} />
       </div>
       <hr />
       <div className="bottom">
