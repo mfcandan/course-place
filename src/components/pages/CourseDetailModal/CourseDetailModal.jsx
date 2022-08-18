@@ -21,14 +21,18 @@ const CourseDetailModal = ({ title }) => {
               }
               alt="react"
             />
-            <Button variant="orange" width="15rem" height="4rem">
-              Enroll Now!
-              {courseDetailModal.course.price > 0 && (
-                <div className="price">
-                  {courseDetailModal.course.price} <SavingsIcon />
-                </div>
-              )}
-            </Button>
+            {!courseDetailModal.course.isEnabled ? (
+              <Button variant="orange" width="15rem" height="4rem">
+                Enroll Now!
+                {courseDetailModal.course.price > 0 && (
+                  <div className="price">
+                    {courseDetailModal.course.price} <SavingsIcon />
+                  </div>
+                )}
+              </Button>
+            ) : (
+              <div className="enable">Enrolled</div>
+            )}
           </div>
           <div className="bottom">
             <div className="content">

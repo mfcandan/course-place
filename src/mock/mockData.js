@@ -50,8 +50,7 @@ export const allCoursesData = [
   {
     id: 4,
     title: 'Svelte is Rocks',
-    imgUrl:
-      'https://s3.amazonaws.com/coursesity-blog/2021/04/SvelteJS_tutorials_Classes.png',
+    imgUrl: 'https://i.ytimg.com/vi/g0KYiJ_q7OA/maxresdefault.jpg',
     price: 125,
     content: '<h1>Course Svelte</h1>',
     authorId: 1,

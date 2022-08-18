@@ -1,3 +1,5 @@
+@import '../../../style/palette.scss';
+
 .courseDetailModal {
   .top {
     text-align: center;
@@ -13,11 +15,22 @@
       border-radius: 6px;
     }
 
-    .price{
+    .price {
       display: flex;
       align-items: center;
       justify-content: center;
       margin-left: 0.5em;
+    }
+
+    .enable {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: $green;
+      font-weight: bold;
+      border: 1px solid $green;
+      border-radius: 6px;
+      padding: 6px;
     }
   }
 
@@ -27,14 +40,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 5em 10em;
-
-    .content{
-      margin: 1em 0;
-    }
+    padding: 3em 10em;
   }
 
-  .price{
+  .price {
     display: flex;
     align-items: center;
     justify-content: center;

@@ -2,8 +2,8 @@ import UserProfile from '../UserProfile/UserProfile'
 import Button from '../../atoms/Button/Button'
 import SavingsIcon from '@mui/icons-material/Savings'
 import { useStore } from '../../../store/store'
-import './card.scss'
 import { authors } from '../../../mock/mockData'
+import './card.scss'
 
 const Card = ({ course }) => {
   const { toggleModal } = useStore()
