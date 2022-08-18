@@ -17,6 +17,7 @@ export const useStore = create((set, get) => ({
     course: {},
   },
   selectedTab: courseTabs.allCourses,
+  searchQuery: '',
 
   // actions
   toggleModal: (course) => {
@@ -67,6 +68,11 @@ export const useStore = create((set, get) => ({
     set(() => ({
       courses,
       user: { ...get().user, hubPoints: totalPoints },
+    }))
+  },
+  setSearchQuery: (value) => {
+    set(() => ({
+      searchQuery: value,
     }))
   },
 }))

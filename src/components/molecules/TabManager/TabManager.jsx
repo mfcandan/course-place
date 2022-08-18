@@ -4,14 +4,19 @@ import Button from '../../atoms/Button/Button'
 import './tabManager.scss'
 
 const TabManager = () => {
-  const { selectedTab, setSelectedTab } = useStore()
+  const { selectedTab, setSelectedTab, setSearchQuery } = useStore()
   const tabs = Object.values(courseTabs)
+
+  const handleTab = (tab) => {
+    setSelectedTab(tab)
+    setSearchQuery('')
+  }
 
   return (
     <article className="tabManager">
       {tabs.map((tab) => (
         <Button
-          onClick={() => setSelectedTab(tab)}
+          onClick={() => handleTab(tab)}
           isSelected={selectedTab === tab}
           key={tab}
           isBold={true}
