@@ -7,6 +7,9 @@
   border-radius: 4px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25), 0 0 50px rgba(0, 0, 0, 0.1);
   padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   &:hover {
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5), 0 0 50px rgba(0, 0, 0, 0.2);
@@ -44,6 +47,17 @@
         color: $orange;
         font-weight: bold;
         border: 1px solid $orange;
+        border-radius: 6px;
+        padding: 6px;
+      }
+
+      .enable {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: $green;
+        font-weight: bold;
+        border: 1px solid $green;
         border-radius: 6px;
         padding: 6px;
       }

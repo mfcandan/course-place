@@ -3,16 +3,13 @@ import Button from '../../atoms/Button/Button'
 import SavingsIcon from '@mui/icons-material/Savings'
 import { useStore } from '../../../store/store'
 import './card.scss'
+import { authors } from '../../../mock/mockData'
 
-const course = {
-  title: 'Everything You Need to Know About Vue.js',
-  content: '<h1>Hello World</h1>',
-  price: 300,
-  imgUrl: 'https://www.sipexe.com/assets/courses/react.jpg',
-}
-
-const Card = () => {
+const Card = ({ course }) => {
   const { toggleModal } = useStore()
+  const author = authors.find(
+    (courseAuthor) => courseAuthor.id === course.authorId
+  )
 
   return (
     <div className="card">
@@ -26,17 +23,18 @@ const Card = () => {
         </div>
         <div className="cardFooter">
           <div className="author">
-            <UserProfile
-              userName="Fatih Candan"
-              userImg="https://media-exp1.licdn.com/dms/image/C4E03AQEnl0HcbfN3kA/profile-displayphoto-shrink_800_800/0/1617886445977?e=1666224000&v=beta&t=WqkhaSOBMphRet06ZPupegZzFS6aaHb1jJJYGQgBs8s"
-            />
+            <UserProfile userName={author.name} userImg={author.imgUrl} />
           </div>
-          {course.price ? (
-            <div className="price">
-              {course.price} <SavingsIcon />
-            </div>
+          {!course.isEnabled ? (
+            course.price ? (
+              <div className="price">
+                {course.price} <SavingsIcon />
+              </div>
+            ) : (
+              <div className="price">Free</div>
+            )
           ) : (
-            <div className="price">Free</div>
+            <div className="enable">Enrolled</div>
           )}
         </div>
         <Button
