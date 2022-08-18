@@ -1,0 +1,54 @@
+@import '../../../style/palette.scss';
+
+.modalBackdrop {
+  background: rgba(0, 0, 0, 0.65);
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 200;
+}
+
+.modalContainer {
+  background: #fff;
+  border-radius: 5px;
+  max-width: 100%;
+  min-height: 60vh;
+  margin: 5vh auto;
+  padding: 15px;
+  min-width: 60vw;
+  max-width: 75vw;
+  overflow-y: scroll;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.modalTitle {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+button {
+  background: $red;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding: 10px 15px;
+  transition: transform 100ms ease-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
