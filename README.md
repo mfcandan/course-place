@@ -5,6 +5,10 @@
 -Built React without UI libraries. 
 -This project contains Prettier & Eslint.
 
+### `npm install` && `npm start`
+
+Runs the app in http://localhost:3000
+
 ### Demo: https://course-place.vercel.app/
 ## Screenshots
 
@@ -13,7 +17,3 @@
 ![Screenshot](screenshots/screenshot2.png)
 
 ![Screenshot](screenshots/screenshot3.png)
-
-### `npm install` && `npm start`
-
-Runs the app in http://localhost:3000
